@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="VG.css">
+    <link rel="image" href="./Erath.png" style="width: 50px;">    
+    <title>TRONIX V-G</title>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="my video">
+        <source src="vg1.mp4" type="video/mp4">
+    </video>
+    
+    <div class="hed">
+        <h1>VIRTUAL GARDEEN</h1>
+    </div>
+
+    <div class="scan">
+    <button><a href="VG Scan.html">Capture</a></button>
+    </div>
+        
+    <div class="log">
+        <button><a href="VG lo.html">login </a></button>
+    </div>
+
+    <div class="assistant">
+        <h1>V-G Assistant</h1>
+        <div class="input-area">
+            <input type="text" id="input" placeholder="Text me anything...">
+            <input type="text" id="userInput" placeholder="Ask me anything...">
+            <button onclick="speak()">Speak</button>
+            <button onclick="getResponse()">Send</button>
+        </div>
+        <div class="response" id="responseArea"></div>
+    </div>
+    <div class="speak" id="input"></div>
+    
+    <script>
+
+        function speak() {
+            var text = document.getElementById("input").value;
+            var utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang='En-US';
+            utterance.rate = 0.8;
+            utterance.pitch = 1;
+            window.speechSynthesis.speak(utterance);
+        }
+        function getResponse() {
+            const userInput = document.getElementById('userInput').value;
+            const responseArea = document.getElementById('responseArea');
+            
+            // Simulated response for demonstration
+            const responses = {
+                "hii": "Hi! It's nice to meet you. Is there something I can help you with or would you like to chat?",
+                "hello": "Hello! How can I assist you today?",
+                "what is your name?": "I am VG Assistant.",
+                "how are you?": "I'm just a program, but I'm here to help you!",
+                "thank you": "You're welcome!",
+                "no": "No problem, have a good day!",
+                "yes": "Great! How can I assist you?",
+                "i am well": "That's great! What can I help you with?",
+                "i am good": "That's great! What can I help you with?",
+                "i am fine": "That's great! What can I help you with?",
+                "i am bad": "I'm sorry to hear that. How can I assist you?",
+                "i am angry": "I'm sorry to hear that. How can I assist you?",
+                "i am tired": "I'm sorry to hear that. How can I assist you?",
+                "i am bored": "I'm sorry to hear that. How can I assist you?",
+                "i am happy": "That's great! What can I help you with?",
+                "i am sad": "I'm sorry to hear that. How can I assist you?",
+                "i am depressed": "I'm sorry to hear that. How can I assist you?",
+                "i am excited": "That's great! What can I help you with?",
+                "i am nervous": "I'm sorry to hear that. How can I assist you?",
+                "i am afraid": "I'm sorry to hear that. How can I assist you?",
+                "i am scared": "I'm sorry to hear that. How can I assist you?",
+                "i am frustrated": "I'm sorry to hear that. How can I assist you?",
+                "i am in love": "That's great! What can I help you with?",
+                "i am in pain": "I'm sorry to hear that. How can I assist you?",
+                "bye": "Goodbye! See you next time!",
+                "goodbye": "Goodbye! See you next time!",
+                "thanks": "You're welcome!"
+              };
+    
+            const response = responses[userInput.toLowerCase()] || "I'm sorry, I don't understand that.";
+            responseArea.innerText = response;
+            document.getElementById('input').value = '';
+        }    
+        
+    </script>
+</body>
+</html>

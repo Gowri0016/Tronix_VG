@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRONIX V-G</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        video
+        {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            width: 1550px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        button
+        {
+        border-radius: 40px;
+        width: 200px;
+        color: white;
+        background-image: url(lon3.jpg);
+        }
+        button:hover
+        {
+            background-image:url(lon1.avif);   
+        }
+        #camera {
+            width: 100%;
+            max-width: 340px;
+            height: 250px;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 600px;    
+            top: 300px;      
+        }
+        #capture {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            top: 200px;
+            left: 680px;
+        }
+        #photo {
+            margin-top: 0;
+            display: none;
+        }
+        #scanning {
+            width: 100%;
+            max-width: 340px;
+            height: 250px;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 100px;    
+            top: 300px; 
+
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="my video">
+        <source src="vg1.mp4" type="video/mp4">
+    </video>
+
+    <video id="camera" autoplay></video>
+    <button id="capture">Capture Image</button>
+    <canvas id="photo"></canvas>
+
+    <script>
+        const video = document.getElementById('camera');
+        const canvas = document.getElementById('photo');
+        const context = canvas.getContext('2d');
+        const captureButton = document.getElementById('capture'); 
+        
+        // Set up camera stream
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+        })
+            .catch(err => {
+                console.error("Error accessing camera: ", err);
+            });
+
+            captureButton.addEventListener('click', () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+         
+            context.drawImage(video, 0, 0);
+            const imageData = canvas.toDataURL('image/jpg');
+            const link = document.createElement('a');
+            link.href = imageData;
+            link.download = 'TRONIX V-G-image.jpg';
+            link.click();
+        });
+    </script>
+</body>
+</html>

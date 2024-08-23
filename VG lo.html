@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="log new.js" rel="js">
+<title>TRONIX V-G</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    video
+    {
+        width: 1550px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+    h2
+    {
+        background-image: url(lon.avif);
+        background-size: cover;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+        padding: 20px;
+        background: none;
+        border-radius: 5px;
+        background: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        width: 100%;
+        z-index: 1;
+    }
+    input[type="text"], input[type="password"] {
+        padding: 8px;
+        color: white;
+        background: none;
+        border-radius: 50px;
+    }
+    input[type="submit"] {
+        padding: 10px;
+        border-radius: 50px;
+        width: 100px;
+        background-image: url(lon3.jpg);
+        color: white;
+        position: relative;
+        left: 100px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-image:url(lon1.avif);
+    }
+</style>
+</head>
+<body>
+
+    <video autoplay muted loop id="my video">
+        <source src="vg1.mp4" type="video/mp4">
+    </video>
+
+    <form id="loginForm">
+        <h2>Login</h2>
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+
+    <form id="registerForm">
+        <h2>Register</h2>
+        <input type="text" id="registerUsername" placeholder="Username" required>
+        <input type="password" id="registerPassword" placeholder="Password" required>
+        <input type="submit" value="Register">
+    </form>
+
+    <script src="VG lo.js"></script>
+</body>
+</html>
