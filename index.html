@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +39,26 @@
     </div>
     <div class="speak" id="input"></div>
     
+    <button id="btn">Add</button>
+    <button id="r_btn" onclick="remove(event)">Remove</button>
+
+    <div id="container">
+    <h1></h1>
+    </div>
+
     <script>
+
+        btn.addEventListener("click",function(){
+            var para=document.createElement("h1")
+            para.textContent="V-G Assistant"
+            console.log(para)
+            var container=document.getElementById("container")
+            container.append(para)
+            r_btn.addEventListener("click",function(){
+            var container=document.getElementById("container")
+            container.remove()
+            })
+        })
 
         function speak() {
             var text = document.getElementById("input").value;
@@ -53,36 +73,22 @@
             const responseArea = document.getElementById('responseArea');
             
             // Simulated response for demonstration
-            const responses = {
-                "hii": "Hi! It's nice to meet you. Is there something I can help you with or would you like to chat?",
+            const responses ={
+                "hi": "Hello! How can I assist you today?",
+                "hii": "Hi! It's nice to meet you. Is there something I can help you with, or would you like to chat?",
                 "hello": "Hello! How can I assist you today?",
-                "what is your name?": "I am VG Assistant.",
+                "helloo": "Hi! It's nice to meet you. Is there something I can help you with, or would you like to chat?",
+                "who are you?": "I am VG Assistant.",
                 "how are you?": "I'm just a program, but I'm here to help you!",
                 "thank you": "You're welcome!",
-                "no": "No problem, have a good day!",
+                "no": "No problem! Have a great day!",
                 "yes": "Great! How can I assist you?",
-                "i am well": "That's great! What can I help you with?",
-                "i am good": "That's great! What can I help you with?",
-                "i am fine": "That's great! What can I help you with?",
-                "i am bad": "I'm sorry to hear that. How can I assist you?",
-                "i am angry": "I'm sorry to hear that. How can I assist you?",
-                "i am tired": "I'm sorry to hear that. How can I assist you?",
-                "i am bored": "I'm sorry to hear that. How can I assist you?",
-                "i am happy": "That's great! What can I help you with?",
-                "i am sad": "I'm sorry to hear that. How can I assist you?",
-                "i am depressed": "I'm sorry to hear that. How can I assist you?",
-                "i am excited": "That's great! What can I help you with?",
-                "i am nervous": "I'm sorry to hear that. How can I assist you?",
-                "i am afraid": "I'm sorry to hear that. How can I assist you?",
-                "i am scared": "I'm sorry to hear that. How can I assist you?",
-                "i am frustrated": "I'm sorry to hear that. How can I assist you?",
-                "i am in love": "That's great! What can I help you with?",
-                "i am in pain": "I'm sorry to hear that. How can I assist you?",
+                "bye bye": "Goodbye! See you next time!",
                 "bye": "Goodbye! See you next time!",
                 "goodbye": "Goodbye! See you next time!",
-                "thanks": "You're welcome!"
-              };
-    
+                "good night": "Good night! See you next time!",
+                 };
+
             const response = responses[userInput.toLowerCase()] || "I'm sorry, I don't understand that.";
             responseArea.innerText = response;
             document.getElementById('input').value = '';
