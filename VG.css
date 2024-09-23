@@ -6,6 +6,28 @@
     {
          background-color: white;
     }
+    #btn
+    {
+        background-color: black;
+        color: white;
+        width: 70px;
+        padding: 10px;
+        display: flex;
+        justify-content: left;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #r_btn
+    {
+        background-color: black;
+        color: white;
+        width: 70px;
+        padding: 10px;
+        display: flex;
+        justify-content: left;
+        border-radius: 5px;
+        cursor: pointer;
+    }
     video
     {
         width: 1550px;
@@ -114,7 +136,36 @@
 
     body
     {
-         background-color: wheat;
+         background-color: rgb(48, 50, 97);
+    }
+    #btn
+    {
+        background-color: black;
+        color: blue;
+        text-align: center;
+        width: 70px;
+        height: 20px;
+        padding: 1px;
+        border-radius: 10px;
+        cursor: pointer;
+        position: absolute;
+        right: 30px;
+        top: 40px;
+    
+    }
+    #r_btn
+    {
+        background-color: black;
+        color: blue;
+        text-align: center;
+        width: 70px;
+        height: 20px;
+        padding: 1px;
+        border-radius: 10px;
+        cursor: pointer;
+        position: absolute;
+        right: 30px;
+        top: 70px;
     }
     .hon
     {
